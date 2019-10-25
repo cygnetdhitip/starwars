@@ -1,0 +1,90 @@
+/* You can add global styles to this file, and also import other style files */
+
+// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~bootstrap/dist/css/bootstrap.min.css";
+html, body { height: 100%;  }
+body { margin: 0; font-family: 'Roboto', "Helvetica Neue", 'sans-serif';background: #dddddd !important; }
+
+.pagination{
+    margin-top: 5px;
+}
+
+.page-item.disabled .page-link{
+    color: #999999 !important;
+}
+
+.page-item.active .page-link{
+    border-color: #61F093 !important;
+    background-color: #61F093 !important;
+    color: #333333 !important;
+}
+
+.page-link{
+    color: #61F093 !important;    
+    &:hover{
+        color: #53C47B !important;
+    }
+}
+
+.label-title{
+    text-align: center;    
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.title{
+    text-align: left;    
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.card{
+    width: 265px;
+    display: block;
+    position: relative;
+    background: #333 !important;
+    color: #999999;
+    font-size: 12px;
+    margin: 5px 0px;
+    height: 200px;
+    overflow-y: auto;
+    transition: 0.3s;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);    
+    .card-title, .card-subtitle{        
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .para{
+        line-height: 1rem;
+        margin-bottom: 2px;
+    }
+    a{
+        color: #61F093;
+        &:hover{
+            color: #53C47B;
+        }
+    }
+    table{
+        width: 100%;
+        td.label{
+            width: 10%;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;    
+        }
+        .label-data{
+            width: 20%;
+            text-align: right;
+            padding-right: 15px;
+        }
+    }
+    &:hover{
+        transition: all 0.2s ease-out;
+        box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+        top: -4px;
+        border: 1px solid #999;
+        background-color: #444 !important;
+    }
+}

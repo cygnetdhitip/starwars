@@ -1,0 +1,20 @@
+<div class="card" (click)="navigateToDetails()">
+        <div class="card-body">
+          <h5 class="card-title">{{person.name}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{person.gender}}</h6>
+          <table>
+            <tr>
+              <td>StarShips</td>
+              <td><a  href="javascript:void(0)" class="card-link" *ngFor="let s of person.ships" (click)="$event.stopPropagation();filter(s)">{{s.name}}</a></td>
+            </tr>
+            <tr>
+              <td>Home World</td>
+              <td><a href="javascript:void(0)" class="card-link" (click)="$event.stopPropagation();filter({url:person.homeworld, name: person.home})">{{person.home}}</a></td>
+            </tr>
+            <tr>
+              <td>Species</td>
+              <td><a href="javascript:void(0)" class="card-link" *ngFor="let s of person.speciesNames" (click)="$event.stopPropagation();filter(s)">{{s.name}}</a></td>
+            </tr>
+          </table>          
+    </div>
+</div>

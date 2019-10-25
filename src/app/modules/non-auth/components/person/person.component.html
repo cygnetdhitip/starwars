@@ -1,0 +1,40 @@
+<app-search-bar [showFilterBox]="true"></app-search-bar>
+<div class="container">
+  <div class="card person-details">
+          <div class="card-body">
+            <h5 class="card-title">{{person.name}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{person.gender}}</h6>          
+            <table>
+              <tr>              
+                  <td class="label">Birth Year</td>
+                  <td class="label-data">{{person.birth_year}}</td>
+                  <td class="label">Hair Color</td>
+                  <td class="label-data">{{person.hair_color}}</td>
+                  <td class="label">Skin Color</td>
+                  <td class="label-data">{{person.skin_color}}</td>
+              </tr>
+              <tr>              
+                <td class="label">Eye Color</td>
+                <td class="label-data">{{person.eye_color}}</td>
+                <td class="label">Height</td>
+                <td class="label-data">{{person.height}}</td>
+                <td class="label">Mass</td>
+                <td class="label-data">{{person.mass}}</td>
+              </tr>                        
+              <tr>              
+                <td class="label">Species</td>
+                <td class="label-data"><span class="card-link" *ngFor="let s of person.speciesNames">{{s.name}}</span></td>
+                <td class="label">Home World</td>
+                <td class="label-data"><span class="card-link">{{person.home}}</span></td>
+              </tr>  
+              <tr>
+                <td class="label">StarShips</td>
+                <td class="label-data"><span class="card-link" *ngFor="let s of person.ships">{{s.name}}</span></td>
+              </tr>         
+            </table>          
+      </div>
+  </div>
+  <app-carousel [label]="'Films'" [content]="person.filmNames"></app-carousel>
+
+  <button type="button" class="btn btn-success people-btn" (click)="goToLandingPage()">Back</button>
+</div>

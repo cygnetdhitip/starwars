@@ -1,0 +1,20 @@
+<div class="content-slider">
+    <a class="carousel-control-prev" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true" (click)="slidePrevious()"></span>
+    </a>
+    <a class="carousel-control-next" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true" (click)="slideNext()"></span>
+    </a>
+  <div class="container">
+    <label class="label-title">{{label}}</label>       
+    <div class="sliders">
+        <ng-container *ngFor="let f of content; let i = index">                    
+          <div class="slider" *ngIf="currentSlide == i" > 
+            <!-- @flyInOut -->
+            <div class="title">{{f.title}}</div>
+            <div>{{f.description}}</div>
+          </div>                  
+        </ng-container>                             
+      </div>
+  </div>
+</div>

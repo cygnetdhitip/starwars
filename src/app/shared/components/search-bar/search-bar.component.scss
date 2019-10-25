@@ -1,0 +1,30 @@
+.title-card{
+    width: auto;
+    max-width: 350px;
+    max-height: 36px;
+    border-radius: 20px;
+    margin: 2px;
+    h5{
+        margin: 5px 10px;
+        text-align: center;
+    }
+    .card-title{
+        font-size: 17px;
+    }
+    &.card.selected{
+        background: #555555 !important;        
+        &:hover{
+            cursor: pointer;
+            border: 1px solid #222222;
+        }
+    }
+    &:hover{
+        cursor: pointer;
+        border: 1px solid #222222;
+        top: 0;
+    }
+}
+
+.search-tool{
+    margin-top: 10px;
+}

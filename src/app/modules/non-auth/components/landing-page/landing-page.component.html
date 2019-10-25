@@ -1,0 +1,25 @@
+<app-search-bar [showFilterBox]="true" (filterBy)="searchBarFilter($event)" [removeAllFilters]="removeAllFilters"></app-search-bar>
+<div class="container" *ngIf="searchFilter">
+    <div class="row">
+        <div class="col-sm-6">Search Filter : {{searchFilter}}</div>
+        <div class="col-sm-6">
+            <button type="button" class="btn btn-success" (click)="clearFilters()">Remove all filters</button>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3"  *ngFor="let p of filteredPeopleList.length === 0 ? peopleList : filteredPeopleList">
+            <app-card [person]="p" (filterBy)="filterPeople($event)"></app-card>
+        </div>
+    </div>
+</div>
+<div class="container" *ngIf="peopleList.length > 0">
+    <app-paginator 
+        [total]="total" 
+        [currentPage]="currentPage" 
+        [countsPerPage]="countsPerPage"    
+        (currentPageChange)="getPeopleData($event)">
+    </app-paginator>
+</div>
+<app-spinner [isLoading]="isLoading"></app-spinner>

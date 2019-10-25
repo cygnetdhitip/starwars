@@ -1,0 +1,49 @@
+<div class="search-tool container">
+    <form (submit)="searchStarWar()">
+        <div class="row">
+            <div class="col-md-11">              
+              <input type="text" class="form-control" id="search" [formControl]='search' placeholder="Search People, films, planets, spaceships">
+              <div class="error" *ngIf="search.errors && search.errors['minlength']">minimum length is greater than entered value</div>
+            </div>
+            <div class="col-md-1">
+                <button type="submit" class="btn btn-success mb-2">Search</button>
+            </div>
+        </div>
+    </form>
+    <div class="container" *ngIf="showFilterBox && (people.length > 0 || planets.length > 0 || spaceships.length > 0 || films.length > 0)">
+        Click to filter by<br />
+        <div *ngIf="people.length > 0">
+            People 
+            <div class="row">
+                <div class="card title-card" *ngFor="let p of people" (click)="toggleFilter(p.url)" [ngClass]="{'selected': filterByUrls.indexOf(p.url) >= 0}">
+                    <h5 class="card-title">{{p.name}}</h5>
+                </div>
+            </div>
+        </div>        
+        <div *ngIf="planets.length > 0">
+            Planets
+            <div class="row">
+                <div class="card title-card" *ngFor="let p of planets" (click)="toggleFilter(p.url)" [ngClass]="{'selected': filterByUrls.indexOf(p.url) >= 0}">
+                        <h5 class="card-title">{{p.name}}</h5>
+                </div>
+            </div>
+        </div>        
+        <div *ngIf="films.length > 0">
+            Films
+            <div class="row">
+                <div class="card title-card" *ngFor="let f of films" (click)="toggleFilter(f.url)" [ngClass]="{'selected': filterByUrls.indexOf(f.url) >= 0}" >
+                        <h5 class="card-title">{{f.title}}</h5>
+                </div>
+            </div> 
+        </div>        
+        <div *ngIf="spaceships.length > 0">
+            Space ships 
+            <div class="row">
+                <div class="card title-card" *ngFor="let s of spaceships" (click)="toggleFilter(s.url)" [ngClass]="{'selected': filterByUrls.indexOf(s.url) >= 0}">
+                        <h5 class="card-title">{{s.name}}</h5>
+                </div>
+            </div>
+        </div>        
+    </div>
+
+</div>

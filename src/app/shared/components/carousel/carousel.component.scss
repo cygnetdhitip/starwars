@@ -1,0 +1,21 @@
+
+.content-slider{
+    border-radius: 5px;
+    border: 2px solid #888;
+    background: #333;
+    min-height: 150px;    
+    margin-top: 10px;
+    color: #9a9a9a;
+    font-size: 12px;
+    .container{
+        margin: 20px 0px;
+        .label-title{
+            width: 100%;
+        }
+    }
+    .carousel-control-prev, .carousel-control-next{
+            max-height: 200px;
+            margin-top: 18.5%;
+            width: 20%;
+    }    
+}
